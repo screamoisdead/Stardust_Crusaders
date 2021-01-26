@@ -10,6 +10,7 @@ namespace Stardust_Crusaders
         private string name;
         private int health;
         private int damage;
+        public static int mod = 1;
 
         public string Name
         {

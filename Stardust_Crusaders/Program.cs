@@ -6,29 +6,22 @@ using System.Threading;
 
 namespace Stardust_Crusaders
 {
+
     class Program
     {
+
+
         static void Main(string[] args)
         {
 
             //Start the game
-            //Game.Start();
-
-            playSound();
+            Game.Start();
 
             //Enter the Main menu
-            //Game.MainMenu();
+            Game.MainMenu();
 
         }
 
-        public static void playSound()
-        {
-            string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = projectDirectory + "/Sounds/9098__ddohler__typewriter.wav";
-            player.PlaySync();
-            Console.ReadKey();
-        }
+
     }
 }
