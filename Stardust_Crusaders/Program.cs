@@ -9,8 +9,6 @@ namespace Stardust_Crusaders
 
     class Program
     {
-
-
         static void Main(string[] args)
         {
 
@@ -21,7 +19,5 @@ namespace Stardust_Crusaders
             Game.MainMenu();
 
         }
-
-
     }
 }

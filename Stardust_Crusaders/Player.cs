@@ -6,7 +6,7 @@ namespace Stardust_Crusaders
 {
     class Player
     {
-
+        //Fields
         private string name;
         private int health = 100;
         private int damage = 2;
@@ -26,6 +26,7 @@ namespace Stardust_Crusaders
         public static int levelNineCap = 400;
         public static int levelTenCap = 450;
 
+        //Properties
         public string Name
         {
             get
@@ -111,11 +112,13 @@ namespace Stardust_Crusaders
             }
         }
 
+        //Constructor
         public Player()
         {
 
         }
 
+        //Constructor
         public Player(
             string name
         )
@@ -129,7 +132,9 @@ namespace Stardust_Crusaders
         public static void CharacterInfo()
         {
             Console.Clear();
+            Console.WriteLine("********************");
             Console.WriteLine("Character status");
+            Console.WriteLine("********************");
             Console.WriteLine($"Name: {Game.currentPlayer.name}");
             Console.WriteLine($"Health: {Game.currentPlayer.health}");
             Console.WriteLine($"Gold: {Game.currentPlayer.gold}");
@@ -137,12 +142,16 @@ namespace Stardust_Crusaders
             Console.WriteLine($"Experience: {Game.currentPlayer.experience}");
             Console.WriteLine($"Armor: {Game.currentPlayer.ArmorValue}");
             Console.WriteLine($"Damage: {Game.currentPlayer.damage}");
+            Console.WriteLine("********************");
+            Console.WriteLine("[Press enter...]");
             Console.ReadKey();
             Game.MainMenu();
 
         }
 
         //Method that checks if the character meets the requirement to level up
+        //Along with every level there are difficulty modifier breakpoints
+        //At level 3 and 6. That will increase the health and the damage of the enemies
         //Also checks if you reached the maximum level which is the endgame event
         //Meaning you won the game!
         public static void CharacterLevelCheck()
@@ -156,6 +165,7 @@ namespace Stardust_Crusaders
                 Game.currentPlayer.health = currentHealth + 10;
                 Console.WriteLine("You reached level 2! and you are healed for 10 points");
                 Game.playSound(Sounds.soundLevelUp);
+                Console.WriteLine("[Press enter...]");
                 Console.ReadKey();
 
             }
@@ -166,6 +176,7 @@ namespace Stardust_Crusaders
                 Game.currentPlayer.health = currentHealth + 10;
                 Console.WriteLine("You reached level 3! and you are healed for 10 points");
                 Console.WriteLine("And your enemies grow stronger");
+                Console.WriteLine("[Press enter...]");
                 Monsters.mod = 2;
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
@@ -173,7 +184,10 @@ namespace Stardust_Crusaders
             else if (Game.currentPlayer.experience > levelFourCap && Game.currentPlayer.level == 3)
             {
                 Game.currentPlayer.level = 4;
+                int currentHealth = Game.currentPlayer.health;
+                Game.currentPlayer.health = currentHealth + 10;
                 Console.WriteLine("You reached level 4! and you are healed for 10 points");
+                Console.WriteLine("[Press enter...]");
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
 
@@ -182,18 +196,52 @@ namespace Stardust_Crusaders
             {
                 Game.currentPlayer.level = 5;
                 Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("[Press enter...]");
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
             }
-
-            /*
-            Console.WriteLine("Congratulations, you reached the final level.");
-            Console.WriteLine("It means you won the game");
-            Game.playSound(Sounds.soundMudaMudaMuda);
-            Console.ReadKey();
-            System.Environment.Exit(0);
-            */
+            else if (Game.currentPlayer.experience > levelSixCap && Game.currentPlayer.level == 5)
+            {
+                Game.currentPlayer.level = 6;
+                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("And your enemies grow stronger");
+                Console.WriteLine("[Press enter...]");
+                Monsters.mod = 3;
+                Game.playSound(Sounds.soundLevelUp);
+                Console.ReadKey();
+            }
+            else if (Game.currentPlayer.experience > levelSevenCap && Game.currentPlayer.level == 6)
+            {
+                Game.currentPlayer.level = 7;
+                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("[Press enter...]");
+                Game.playSound(Sounds.soundLevelUp);
+                Console.ReadKey();
+            }
+            else if (Game.currentPlayer.experience > levelEightCap && Game.currentPlayer.level == 7)
+            {
+                Game.currentPlayer.level = 8;
+                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("[Press enter...]");
+                Game.playSound(Sounds.soundLevelUp);
+                Console.ReadKey();
+            }
+            else if (Game.currentPlayer.experience > levelNineCap && Game.currentPlayer.level == 8)
+            {
+                Game.currentPlayer.level = 9;
+                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("[Press enter...]");
+                Game.playSound(Sounds.soundLevelUp);
+                Console.ReadKey();
+            }
+            else if (Game.currentPlayer.experience > levelTenCap && Game.currentPlayer.level == 9)
+            {
+                Console.WriteLine("Congratulations, you reached the final level.");
+                Console.WriteLine("It means you won the game");
+                Game.playSound(Sounds.soundMudaMudaMuda);
+                Console.ReadKey();
+                System.Environment.Exit(0);
+            }
         }
-
     }
 }

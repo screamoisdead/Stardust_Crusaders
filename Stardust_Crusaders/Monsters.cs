@@ -6,12 +6,13 @@ namespace Stardust_Crusaders
 {
     class Monsters
     {
-
+        //Fields
         private string name;
         private int health;
         private int damage;
         public static int mod = 1;
 
+        //Properties
         public string Name
         {
             get
@@ -48,6 +49,7 @@ namespace Stardust_Crusaders
             }
         }
 
+        //Constructor
         public Monsters(string name, int health, int damage)
         {
             this.name = name;

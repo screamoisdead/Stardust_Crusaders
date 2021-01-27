@@ -20,6 +20,7 @@ namespace Stardust_Crusaders
         public static bool keepPlaying = true;
 
         //Public strings that helps getting a working directory path right to the project folder when wanting to acess files
+        //In this case its used to create a relative path to the audio files im using in the game
         //Rather than the default is that its stuck in /bin/debug/netcoreapp3.1/
         public static string workingDirectory = Environment.CurrentDirectory;
         public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
@@ -56,6 +57,7 @@ namespace Stardust_Crusaders
                 if(tempName != "dio" && tempName != "robin")
                 {
                     Console.WriteLine($"{tempName}, sounds like an awful name... maybe try the name dio instead.");
+                    Console.WriteLine("[Press enter...]");
                     Console.ReadKey();
                     Console.Clear();
                 } 
@@ -65,17 +67,18 @@ namespace Stardust_Crusaders
                     currentPlayer.Name = tempName;
                     playSound(Sounds.soundZaWarudo);
                     wrongName = false;
+                    Console.WriteLine("[Press enter...]");
                     Console.ReadKey();
                 }
                 //God mode
                 else if (tempName == "robin")
                 {
                     Console.WriteLine($"Ah yes, {tempName}-senpai. God mode has been activated at your leisure");
+                    Console.WriteLine("[Press enter...]");
                     Console.ReadKey();
                     currentPlayer.Name = tempName;
                     currentPlayer.Damage = 999;
                     currentPlayer.Health = 999;
-                    Console.Clear();
                     wrongName = false;
                 }
             }
@@ -89,11 +92,13 @@ namespace Stardust_Crusaders
                
                 Console.Clear();
 
+                //A smaller character overview with name, level and current health
                 Console.WriteLine("********************");
-                Console.WriteLine($"*{currentPlayer.Name} - Level {currentPlayer.Level}");
+                Console.WriteLine($"* {currentPlayer.Name} - Level {currentPlayer.Level}");
+                Console.WriteLine($"* Health - {currentPlayer.Health}");
                 Console.WriteLine("********************");
                 Console.WriteLine("1. Walk around");
-                Console.WriteLine("2.Character info");
+                Console.WriteLine("2. Character info");
                 Console.WriteLine("3. Shop");
                 Console.WriteLine("4. Exit");
                 int input = Convert.ToInt32(Console.ReadLine());
@@ -106,12 +111,15 @@ namespace Stardust_Crusaders
                         //But there is also a 10% chance that we dont see any monster
                         if (Encounters.rand.Next(1, 10) == 1)
                         {
-                            Console.WriteLine("You see nothing");
+                            Console.Clear();
+                            Console.WriteLine("You are looking for trouble, but nobody seems to be up for the challenge");
+                            playSound(Sounds.soundNothing);
+                            Console.WriteLine("[Press enter...]");
                             Console.ReadKey();
                         }
                         else
                         {
-                        //Opens the method where a enemy is randomly selected
+                            //Opens the method where a enemy is randomly selected
                             Encounters.RandomEncounter();
                         }
                         break;
@@ -119,11 +127,11 @@ namespace Stardust_Crusaders
                         //Open method character information to show the current stats of your character
                         Player.CharacterInfo();
                         break;
-                        //Opens method shop where you are able to buy amulets to increase
-                        //Your strenght or Defense
                     case 3:
                         //Resets the bool statement loop for the shop so we can go in and out of it.
                         Shop.keepBuying = true;
+                        //Opens the method shop where you are able to boost your character
+                        //With the help from attack or defence amulets
                         Shop.OpenShop();
                         break;
                     case 4:
@@ -131,13 +139,14 @@ namespace Stardust_Crusaders
                         keepPlaying = false;
                         break;
                     default:
+                        //If you didnt put in any of the right choices you will be asked to try again
                         Console.WriteLine("Wrong input");
+                        Console.WriteLine("[Press enter...]");
                         Console.ReadKey();
                         break;
                 }
             }
         }
-
 
         //Method that helps playing soundeffects
         //You just define the pathway to the sounds folder

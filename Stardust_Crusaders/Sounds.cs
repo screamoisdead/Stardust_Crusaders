@@ -6,7 +6,9 @@ namespace Stardust_Crusaders
 {
     class Sounds
     {
-        //Put all sound paths in strings that are easier to use when calling the play() method
+        //This is a sound utility file to help put the path name to the different sounds in strings
+        //So that it will look neater when calling the playSound() method
+        // Example playSound(soundNo);
         public static string soundNo = "/Sounds/no.wav";
         public static string soundAttackOne = "/Sounds/attackOne.wav";
         public static string soundAttackTwo = "/Sounds/attackTwo.wav";
@@ -15,10 +17,11 @@ namespace Stardust_Crusaders
         public static string soundMudaMudaMuda = "/Sounds/mudaMudaMuda.wav";
         public static string soundNewItem = "/Sounds/newItem.wav";
         public static string soundOuch = "/Sounds/ouch.wav";
+        public static string soundOuchTwo = "/Sounds/ouchTwo.wav";
         public static string soundPlayerDie = "/Sounds/playerDie.wav";
         public static string soundZaWarudo = "/Sounds/zaWarudo.wav";
         public static string soundZaWarudoTwo = "/Sounds/zaWarudoTwo.wav";
-
-
+        public static string soundNothing = "/Sounds/nothing.wav";
+        public static string soundEncounter = "/Sounds/encounter.wav";
     }
 }
