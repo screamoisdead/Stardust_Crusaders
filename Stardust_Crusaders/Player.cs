@@ -203,7 +203,7 @@ namespace Stardust_Crusaders
             else if (Game.currentPlayer.experience > levelSixCap && Game.currentPlayer.level == 5)
             {
                 Game.currentPlayer.level = 6;
-                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("You reached level 6! and you are healed for 10 points");
                 Console.WriteLine("And your enemies grow stronger");
                 Console.WriteLine("[Press enter...]");
                 Monsters.mod = 3;
@@ -213,7 +213,7 @@ namespace Stardust_Crusaders
             else if (Game.currentPlayer.experience > levelSevenCap && Game.currentPlayer.level == 6)
             {
                 Game.currentPlayer.level = 7;
-                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("You reached level 7! and you are healed for 10 points");
                 Console.WriteLine("[Press enter...]");
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
@@ -221,7 +221,7 @@ namespace Stardust_Crusaders
             else if (Game.currentPlayer.experience > levelEightCap && Game.currentPlayer.level == 7)
             {
                 Game.currentPlayer.level = 8;
-                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("You reached level 8! and you are healed for 10 points");
                 Console.WriteLine("[Press enter...]");
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
@@ -229,7 +229,7 @@ namespace Stardust_Crusaders
             else if (Game.currentPlayer.experience > levelNineCap && Game.currentPlayer.level == 8)
             {
                 Game.currentPlayer.level = 9;
-                Console.WriteLine("You reached level 5! and you are healed for 10 points");
+                Console.WriteLine("You reached level 9! and you are healed for 10 points");
                 Console.WriteLine("[Press enter...]");
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();

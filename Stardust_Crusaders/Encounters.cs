@@ -32,7 +32,6 @@ namespace Stardust_Crusaders
                     Console.ReadKey();
                     //Opens the method that will make you fight the enemy called Jotaro
                     Combat(Game.Jotaro.Name, Game.Jotaro.Health, Game.Jotaro.Damage);
-                    Game.playSound(Sounds.soundEncounter);
                     break;
                 case 3:
                     Console.Clear();
