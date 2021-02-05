@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stardust_Crusaders.Enemies;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,7 +23,7 @@ namespace Stardust_Crusaders
                     Game.playSound(Sounds.soundEncounter);
                     Console.ReadKey();
                     //Opens the method that will make you fight the enemy called Polnaref
-                    Combat(Game.Polnaref.Name, Game.Polnaref.Health, Game.Polnaref.Damage);
+                    Combat(Game.polnaref.Name,Game.polnaref.Health,Game.polnaref.Damage);
                     break;
                 case 2:
                     Console.Clear();
@@ -31,7 +32,7 @@ namespace Stardust_Crusaders
                     Game.playSound(Sounds.soundEncounter);
                     Console.ReadKey();
                     //Opens the method that will make you fight the enemy called Jotaro
-                    Combat(Game.Jotaro.Name, Game.Jotaro.Health, Game.Jotaro.Damage);
+                    Combat(Game.jotaro.Name,Game.jotaro.Health,Game.jotaro.Damage);
                     break;
                 case 3:
                     Console.Clear();
@@ -40,7 +41,7 @@ namespace Stardust_Crusaders
                     Game.playSound(Sounds.soundEncounter);
                     Console.ReadKey();
                     //Opens the method that will make you fight the enemy called Avdol
-                    Combat(Game.Avdol.Name, Game.Avdol.Health, Game.Avdol.Damage);
+                    Combat(Game.avdol.Name,Game.avdol.Health,Game.avdol.Damage);
                     break;
             }
         }
@@ -64,8 +65,8 @@ namespace Stardust_Crusaders
             }
 
             //Once you gain levels the monsters will become stronger and deal more damage
-            health = health * Monsters.mod;
-            damage = damage * Monsters.mod;
+            health = health * Monster.mod;
+            damage = damage * Monster.mod;
 
             //We have to set the battle in a loop to make it turn based where you deal and recieve damage
             //Until either you or the enemy dies.

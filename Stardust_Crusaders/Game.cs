@@ -12,9 +12,9 @@ namespace Stardust_Crusaders
         public static Player currentPlayer = new Player();
 
         //Creates the enemies that are possible to face in this game
-        public static Monsters Jotaro = new Monsters("Jotaro Kujo", 10, 4);
-        public static Monsters Polnaref = new Monsters("Jean Pierre Polnaref", 12, 3);
-        public static Monsters Avdol = new Monsters("Mohammed Avdol", 8, 6);
+        public static Enemies.Polnaref polnaref = new Enemies.Polnaref();
+        public static Enemies.Jotaro jotaro = new Enemies.Jotaro();
+        public static Enemies.Avdol avdol = new Enemies.Avdol();
 
         //Sets up a bool that keeps the game running until you win or die
         public static bool keepPlaying = true;

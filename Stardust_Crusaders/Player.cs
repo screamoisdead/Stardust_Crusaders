@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stardust_Crusaders.Enemies;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -177,7 +178,7 @@ namespace Stardust_Crusaders
                 Console.WriteLine("You reached level 3! and you are healed for 10 points");
                 Console.WriteLine("And your enemies grow stronger");
                 Console.WriteLine("[Press enter...]");
-                Monsters.mod = 2;
+                Monster.mod = 2;
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
             }
@@ -206,7 +207,7 @@ namespace Stardust_Crusaders
                 Console.WriteLine("You reached level 6! and you are healed for 10 points");
                 Console.WriteLine("And your enemies grow stronger");
                 Console.WriteLine("[Press enter...]");
-                Monsters.mod = 3;
+                Monster.mod = 3;
                 Game.playSound(Sounds.soundLevelUp);
                 Console.ReadKey();
             }
